@@ -26,7 +26,7 @@ To model how personality influences action execution, we integrated language gen
 
 | **Trait**                                       | **HE**                                                 | **LE**                      | **HC**                 | **LC**                                       | **HA**                                                             | **LA**                                                 |
 | ----------------------------------------------- | ------------------------------------------------------ | --------------------------- | ---------------------- | -------------------------------------------- | ------------------------------------------------------------------ | ------------------------------------------------------ |
-| **Language**<br>\[Andriella+2022, Garello+2020] | Verbose, Friendly, Talkative,<br>Enthusiastic, Excited | Reserved, Quiet,<br>Neutral | Scrupulous,<br>Precise | Thoughtless, Distracted,<br>Lazy, Disordered | Cooperative, Friendly,<br>Empathic, Forgiving,<br>Reliable, Polite | Competitive, Aggressive,<br>Provocative, Selfish, Rude |
+| **Language**<br> | Verbose, Friendly, Talkative,<br>Enthusiastic, Excited | Reserved, Quiet,<br>Neutral | Scrupulous,<br>Precise | Thoughtless, Distracted,<br>Lazy, Disordered | Cooperative, Friendly,<br>Empathic, Forgiving,<br>Reliable, Polite | Competitive, Aggressive,<br>Provocative, Selfish, Rude |
 | **Pitch**<br>                   | High                                                   | Middle                      | Middle                 | Low                                          | Low                                                                | Middle                                                 |
 | **Volume**<br>                  | Very dynamic                                           | Middle                      | Middle                 | Low                                          | Dynamic                                                            | Dynamic                                                |
 | **Velocity**<br>                | High                                                   | Middle                      | Low                    | Rather high                                  | Middle                                                             | Rather high                                            |
@@ -38,4 +38,6 @@ To model how personality influences action execution, we integrated language gen
 | **Proxemic**<br>                | Near                                                   | Far                         | Middle                 | Middle                                       | Near                                                               | Far                                                    |
 
 
+
+[Personality Generator](./Personality_Generator/Personality_Generator_Finetune.ipynb) folder contains the code used to finetune the BERT attention model.
 
