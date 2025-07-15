@@ -65,9 +65,9 @@ In the practical integration of the generator into the cognitive architecture, s
 
 ## Experiments
 
-![Architecture](images/setup1.png)
+![Architecture](images/setup1.jpg)
 
-![Architecture](images/setup2.png)
+![Architecture](images/setup2.jpg)
 
 ![Architecture](images/setup3.png)
 
