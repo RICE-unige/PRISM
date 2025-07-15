@@ -43,3 +43,14 @@ To model how personality influences action execution, we integrated language gen
 
 
 ### Prospection, Episodic Memory, Semantic Memory
+
+Semantic Memory stores a personality-independent representation of the world through an ontology implementation (i.e., a set of propositions and predicates used to describe the world, which the system retrieves as needed) that allows us to capture its symbolic nature.
+
+![Prospection](images/prospection.png)
+
+Prospection, or internal simulation, enables individuals to plan future actions while satisfying hedonic needs. 
+Our implementation integrates the content of Semantic Memory with a Fast-Forward (FF) planner, using an iterative planning strategy. Within the planning domain (examples at [Prospection folder](./Prospection/)), for each CEA trait, we introduce numeric fluents to model Comfortability (Figure, blue and purple lines). The variation in Comfortability depends on the agent's personality definition (Equation (1)) and on the actions to be executed. The planner ensures that the absolute Comfortability (Figure, red and yellow lines) remains above a set threshold by introducing it as an action precondition.
+
+Through this mechanism, the planner can regulate the variation of Comfortability with a predictive homeostasis (allostasis) behavior, and select the action path that best fulfills the hedonic experience of an agent with a specific personality defined within the CEA taxonomy. For instance, an extraverted agent in conversation may choose to answer with questions to sustain engagement or say something to capture attention if Comfortability drops below the threshold (Figure, actions (2), (10)).
+
+Episodic Memory further refines this process by storing past experiences and outcomes, eventually reinforcing actions that elicit specific emotional responses. This component is responsible for evaluating whether the actual outcome (e.g., user emotions, gaze) of an action aligns with predictions, i.e., the aforementioned variation of Comfortability, adjusting this value accordingly (Figure, actions (2), (8), (10)). Furthermore, Comfortability is directly influenced by environmental stimuli such as user emotions and gaze, reflecting personality sensitivity to external cues. As it varies, the agent may take motivational goal actions without a direct practical objective, enhancing its perceived proactivity (Figure, actions (1-2)). 
