@@ -41,3 +41,5 @@ To model how personality influences action execution, we integrated language gen
 
 [Personality Generator](./Personality_Generator/Personality_Generator_Finetune.ipynb) folder contains the code used to finetune the BERT attention model.
 
+
+### Prospection, Episodic Memory, Semantic Memory
