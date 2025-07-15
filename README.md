@@ -44,7 +44,7 @@ To model how personality influences action execution, we integrated language gen
 
 ### Prospection, Episodic Memory, Semantic Memory
 
-Semantic Memory stores a personality-independent representation of the world through an ontology implementation (i.e., a set of propositions and predicates used to describe the world, which the system retrieves as needed) that allows us to capture its symbolic nature.
+Semantic Memory stores a personality-independent representation of the world through an ontology implementation (i.e., a set of propositions and predicates used to describe the world, which the system retrieves as needed) that allows us to capture its symbolic nature. [Semantic Memory Interface folder](./SemanticMemoryInterface/) contains the ontology and the code used to store predicates, functions on the Sematic Memory.
 
 ![Prospection](images/prospection.png)
 
