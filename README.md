@@ -63,6 +63,15 @@ The component informs the GPT-4o model through the system prompt that its task i
 
 In the practical integration of the generator into the cognitive architecture, since the system can manage three traits concurrently, we perform a weighted random selection by assigning different probabilities to each pole of the personality dimensions. Specifically, we randomly select one trait by considering the relative weights associated with each pole, reflecting their likelihood based on predefined probabilities. These weights depend on the robot's actual personality (as defined by the coefficient in Equation~(1)) and the sensitivity of each pole to the perceived emotion. In this way emotions are more frequently generated based on the emotional intelligence behaviors associated with the traits of agreeableness and extraversion.
 
+## Experiments
+
+![Architecture](images/setup1.png)
+
+![Architecture](images/setup2.png)
+
+![Architecture](images/setup3.png)
+
+![Architecture](images/setup4.png)
 ## Publications
 
 Nardelli, Alice, Carmine Recchiuto, and Antonio Sgorbissa. "A Software Framework to Encode the Psychological Dimensions of an Artificial Agent." 2023 32nd IEEE International Conference on Robot and Human Interactive Communication (RO-MAN). IEEE, 2023.
