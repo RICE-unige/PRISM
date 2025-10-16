@@ -1,0 +1,2 @@
+goal1: Speaking Condition
+goal2: Not-Speaking Condition
