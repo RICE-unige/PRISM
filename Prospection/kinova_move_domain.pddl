@@ -20,8 +20,10 @@
         (reward_e)
         (reward_a)
         (reward_c) 
-        (replace)  
-        (constant_term)  
+        (replace) 
+        (constant)  
+        (constant_term)
+         
 )
 
 (:predicates 
@@ -337,10 +339,10 @@
         :effect
                 (and
                            
-                           (decrease (interaction_level)(*(extroversion_coefficient)(dur)))
-                           (when (consc)(decrease (scrupulousness_level)(*(conscientious_coefficient)(-(dur)(constant_term)))))
-                           (when (unsc)(decrease (scrupulousness_level)(*(conscientious_coefficient)(+(dur)(constant_term)))))
-                           (decrease (agreeableness_level)(*(agreeableness_coefficient)(dur)))
+                           (decrease (interaction_level)(*(*(extroversion_coefficient)(dur))(constant)))
+                           (when (consc)(decrease (scrupulousness_level)(*(conscientious_coefficient)(+(dur)(-((constant_term)(constant)))))))
+                           (when (unsc)(decrease (scrupulousness_level)(*(conscientious_coefficient)(+(dur)(+((constant_term)(constant)))))))
+                           (decrease (agreeableness_level)(*(*(agreeableness_coefficient)(dur))(constant)))
                            (action1_move) 
                            (not (new_block)) 
                                
@@ -361,10 +363,10 @@
         :effect
                 (and
                            
-                           (decrease (interaction_level)(*(extroversion_coefficient)(dur)))
-                           (when (unsc)(decrease (scrupulousness_level)(*(conscientious_coefficient)(-(dur)(constant_term)))))
-                           (when (consc)(decrease (scrupulousness_level)(*(conscientious_coefficient)(+(dur)(constant_term)))))
-                           (decrease (agreeableness_level)(*(agreeableness_coefficient)(dur)))
+                           (decrease (interaction_level)(*(*(extroversion_coefficient)(dur))(constant)))
+                           (when (unsc)(decrease (scrupulousness_level)(*(conscientious_coefficient)(+(dur)(-((constant_term)(constant)))))))
+                           (when (consc)(decrease (scrupulousness_level)(*(conscientious_coefficient)(+(dur)(+((constant_term)(constant)))))))
+                           (decrease (agreeableness_level)(*(*(agreeableness_coefficient)(dur))(constant)))
                            (action1_move)  
                            (not (new_block))      
                 )
@@ -377,22 +379,23 @@
                (and 
                            (emotion_r)
                            (attention_r) 
-                           (low_attention_r) 
-                           (action1_say)   
+                           (low_attention_r)
+                           (new_block)
+                           
+                         
                 )
         :effect
                 (and
                            
-                           (decrease (interaction_level)(*(extroversion_coefficient)(dur)))
-                           (when (consc)(decrease (scrupulousness_level)(*(conscientious_coefficient)(-(dur)(constant_term)))))
-                           (when (unsc)(decrease (scrupulousness_level)(*(conscientious_coefficient)(+(dur)(constant_term)))))
-                           (decrease (agreeableness_level)(*(agreeableness_coefficient)(dur)))
-                           (action2) 
-                           (not (action1_say)) 
-                           (not(to_assign_dominance))      
+                           (decrease (interaction_level)(*(*(extroversion_coefficient)(dur))(constant)))
+                           (when (consc)(decrease (scrupulousness_level)(*(conscientious_coefficient)(+(dur)(-((constant_term)(constant)))))))
+                           (when (unsc)(decrease (scrupulousness_level)(*(conscientious_coefficient)(+(dur)(+((constant_term)(constant)))))))
+                           (decrease (agreeableness_level)(*(*(agreeableness_coefficient)(dur))(constant)))
+                           (action1_move) 
+                           (not (new_block)) 
+                               
                 )
 )
-
 
 (:action PICK_PLACE_ROBOT_WRONG_TURN2
         :precondition
@@ -400,20 +403,19 @@
                            (emotion_r)
                            (attention_r) 
                            (low_attention_r)
+                           (new_block)    
                            (unsc)
-                           (>(conscientious_coefficient)0) 
-                           (action1_say)   
+                           (>(conscientious_coefficient)0)
                 )
         :effect
                 (and
                            
-                           (decrease (interaction_level)(*(extroversion_coefficient)(dur)))
-                           (when (unsc)(decrease (scrupulousness_level)(*(conscientious_coefficient)(-(dur)(constant_term)))))
-                           (when (consc)(decrease (scrupulousness_level)(*(conscientious_coefficient)(+(dur)(constant_term)))))
-                           (decrease (agreeableness_level)(*(agreeableness_coefficient)(dur)))
-                           (action2) 
-                           (not (action1_say))  
-                           (not(to_assign_dominance))        
+                           (decrease (interaction_level)(*(*(extroversion_coefficient)(dur))(constant)))
+                           (when (unsc)(decrease (scrupulousness_level)(*(conscientious_coefficient)(+(dur)(-((constant_term)(constant)))))))
+                           (when (consc)(decrease (scrupulousness_level)(*(conscientious_coefficient)(+(dur)(+((constant_term)(constant)))))))
+                           (decrease (agreeableness_level)(*(*(agreeableness_coefficient)(dur))(constant)))
+                           (action1_move)  
+                           (not (new_block))      
                 )
 )
 
@@ -431,11 +433,11 @@
         :effect
                 (and
                            
-                           (when (intro)(decrease (interaction_level)(*(extroversion_coefficient)(-(dur)(constant_term)))))
-                           (when (extro)(decrease (interaction_level)(*(extroversion_coefficient)(dur))))
-                           (decrease (scrupulousness_level)(*(conscientious_coefficient)(dur)))
-                           (when (disagree)(decrease (agreeableness_level)(*(agreeableness_coefficient)(dur))))
-                           (when (agree)(decrease (agreeableness_level)(*(agreeableness_coefficient)(-(dur)(constant_term)))))
+                           (when (intro)(decrease (interaction_level)(*(extroversion_coefficient)(+(dur)(-((constant_term)(constant)))))))
+                           (when (extro)(decrease (interaction_level)(*(*(extroversion_coefficient)(dur))(constant))))
+                           (decrease (scrupulousness_level)(*(*(conscientious_coefficient)(dur))(constant)))
+                           (when (disagree)(decrease (agreeableness_level)(*(*(agreeableness_coefficient)(dur))(constant))))
+                           (when (agree)(decrease (agreeableness_level)(*(agreeableness_coefficient)(+(dur)(-((constant_term)(constant)))))))
                            (action1_say)
                            (not (new_block)) 
                 )
@@ -459,10 +461,10 @@
         :effect
                 (and
                            
-                           (decrease (interaction_level)(*(extroversion_coefficient)(dur)))
-                           (decrease (scrupulousness_level)(*(conscientious_coefficient)(dur)))
-                           (when (agree)(decrease (agreeableness_level)(*(agreeableness_coefficient)(+(dur)(constant_term)))))
-                           (when (disagree)(decrease (agreeableness_level)(*(agreeableness_coefficient)(-(dur)(constant_term)))))
+                           (decrease (interaction_level)(*(*(extroversion_coefficient)(dur))(constant)))
+                           (decrease (scrupulousness_level)(*(*(conscientious_coefficient)(dur))(constant)))
+                           (when (agree)(decrease (agreeableness_level)(*(agreeableness_coefficient)(+(dur)(-((constant_term)(constant)))))))
+                           (when (disagree)(decrease (agreeableness_level)(*(agreeableness_coefficient)(+(dur)(+((constant_term)(constant)))))))
                            (action1_say)
                            (not (new_block)) 
                            (increase(replace)1)
@@ -476,19 +478,19 @@
                            (emotion_r)
                            (attention_r) 
                            (low_attention_r)
-                           (action1_move)
+                           (new_block) 
+                           
                 )
         :effect
                 (and
-                           (when (intro)(decrease (interaction_level)(*(extroversion_coefficient)(-(dur)(constant_term)))))
-                           (when (extro)(decrease (interaction_level)(*(extroversion_coefficient)(dur))))
-                           (decrease (interaction_level)(*(extroversion_coefficient)(dur)))
-                           (decrease (scrupulousness_level)(*(conscientious_coefficient)(dur)))
-                           (when (disagree)(decrease (agreeableness_level)(*(agreeableness_coefficient)(dur))))
-                           (when (agree)(decrease (agreeableness_level)(*(agreeableness_coefficient)(-(dur)(constant_term)))))
-                           (action2)
-                           (not(action1_move))
-                           (not(to_assign_dominance))  
+                           
+                           (when (intro)(decrease (interaction_level)(*(extroversion_coefficient)(+(dur)(-((constant_term)(constant)))))))
+                           (when (extro)(decrease (interaction_level)(*(*(extroversion_coefficient)(dur))(constant))))
+                           (decrease (scrupulousness_level)(*(*(conscientious_coefficient)(dur))(constant)))
+                           (when (disagree)(decrease (agreeableness_level)(*(*(agreeableness_coefficient)(dur))(constant)))
+                           (when (agree)(decrease (agreeableness_level)(*(agreeableness_coefficient)(+(dur)(-((constant_term)(constant)))))))
+                           (action1_say)
+                           (not (new_block)) 
                 )
 )
 
@@ -499,24 +501,26 @@
                            (emotion_r)
                            (attention_r) 
                            (low_attention_r)
-                           (action1_move)
+                           (new_block) 
                            (disagree)
                            (>(agreeableness_coefficient)0)
                            (<(replace) 2)
-                          
+                        
+
                 )
         :effect
                 (and
-                           (decrease (interaction_level)(*(extroversion_coefficient)(dur)))
-                           (decrease (scrupulousness_level)(*(conscientious_coefficient)(dur)))
-                           (when (agree)(decrease (agreeableness_level)(*(agreeableness_coefficient)(+(dur)(constant_term)))))
-                           (when (disagree)(decrease (agreeableness_level)(*(agreeableness_coefficient)(-(dur)(constant_term)))))
-                           (action2)
-                           (not(action1_move))
-                           (not(to_assign_dominance))  
+                           
+                           (decrease (interaction_level)(*(*(extroversion_coefficient)(dur))(constant)))
+                           (decrease (scrupulousness_level)(*(*(conscientious_coefficient)(dur))(constant)))
+                           (when (agree)(decrease (agreeableness_level)(*(agreeableness_coefficient)(+(dur)(-((constant_term)(constant)))))))
+                           (when (disagree)(decrease (agreeableness_level)(*(agreeableness_coefficient)(+(dur)(+((constant_term)(constant)))))))
+                           (action1_say)
+                           (not (new_block)) 
                            (increase(replace)1)
                 )
 )
+
 (:action COMPUTE_HEDONIC_FEELINGS
         :precondition
                 (and
